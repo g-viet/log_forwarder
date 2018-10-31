@@ -1,23 +1,9 @@
-defmodule LogForwader do
+defmodule LogForwarder do
   @moduledoc """
   A simple LogForwarder backend which run as a supervisor to forward logs to another server.
   """
 
-  use Supervisor
-  alias LogForwader.Client
-
-  def start_link(opts \\ []) do
-    Supervisor.start_link(__MODULE__, opts, name: __MODULE__)
-  end
-
-  def init(_opts) do
-    Supervisor.init(
-      [
-        {Client, []}
-      ],
-      strategy: :one_for_one
-    )
-  end
+  alias LogForwarder.Client
 
   @doc """
   Send log

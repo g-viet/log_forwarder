@@ -26,7 +26,7 @@ config :log_forwarder, config:
     attributes: ~w(level error ...)
 ```
 
-`LogForwader` supports the following configuration values:
+`LogForwarder` supports the following configuration values:
 
 * host
 * port

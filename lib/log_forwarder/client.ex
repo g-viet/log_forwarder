@@ -1,4 +1,4 @@
-defmodule LogForwader.Client do
+defmodule LogForwarder.Client do
   use GenServer
 
   require Logger
