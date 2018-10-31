@@ -8,7 +8,7 @@ A simple `LogForwarder` backend as a supervisor which forwards logs to another s
 ```elixir
 def deps do
   [
-    {:log_forwarder, "~> 0.2.1"}
+    {:log_forwarder, "~> 0.2.2"}
   ]
 end
 ```
