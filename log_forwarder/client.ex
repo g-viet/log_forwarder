@@ -7,15 +7,6 @@ defmodule LogForwader.Client do
     defstruct socket: nil, config: []
   end
 
-  def default_config do
-    [
-      host: "localhost",
-      port: 24224,
-      prefix: "Samplelog",
-      retry_times: 10
-    ]
-  end
-
   def start_link(options \\ []) do
     GenServer.start_link(__MODULE__, options, name: __MODULE__)
   end
@@ -67,6 +58,15 @@ defmodule LogForwader.Client do
     end
 
     state
+  end
+
+  defp default_config do
+    [
+      host: "localhost",
+      port: 24224,
+      prefix: "LogForwarder",
+      retry_times: 10
+    ]
   end
 
   defp compile_config, do: Application.get_env(:sample_project, :fluent_logger)
