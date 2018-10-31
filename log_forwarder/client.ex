@@ -69,5 +69,5 @@ defmodule LogForwader.Client do
     ]
   end
 
-  defp compile_config, do: Application.get_env(:sample_project, :fluent_logger)
+  defp compile_config, do: Application.get_env(:log_forwarder, :config)
 end
