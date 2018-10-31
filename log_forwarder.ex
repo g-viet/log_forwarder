@@ -1,6 +1,6 @@
-defmodule SampleProject.Logger do
+defmodule LogForwader.Logger do
   use Supervisor
-  alias SampleProject.Logger.Client
+  alias LogForwader.Logger.Client
 
   def start_link(opts \\ []) do
     Supervisor.start_link(__MODULE__, opts, name: __MODULE__)
@@ -43,7 +43,7 @@ defmodule SampleProject.Logger do
   end
 end
 
-defmodule SampleProject.Logger.Client do
+defmodule LogForwader.Logger.Client do
   use GenServer
 
   require Logger
