@@ -1,4 +1,8 @@
 defmodule LogForwader do
+  @moduledoc """
+  A simple LogForwarder backend which run as a supervisor to forward logs to another server.
+  """
+
   use Supervisor
   alias LogForwader.Client
 
@@ -15,6 +19,21 @@ defmodule LogForwader do
     )
   end
 
+  @doc """
+  Send log
+
+  ## Parameters:
+  | Param | Description | Example |
+  |-|-|-|
+  | `tag` | Tag of long | `API`, `Auth`, ...|
+  | `level` | Log level | `:info` or `:error`|
+  | `data` | Log data | `%{user_id: 123, function_name: Client.sample_func, ...`} |
+
+  ## Examples
+
+      iex> LogForwarder.send_log('API', :info, data)
+
+  """
   @spec send_log(tag :: binary, level :: Atom.t(), data :: Map.t()) :: {:ok, pid} | nil
   def send_log(tag, level, data) when level in [:info, :error] and is_map(data) do
     Task.start(fn ->

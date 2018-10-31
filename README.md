@@ -1,7 +1,7 @@
   LogForwarder
 =================
 
-A simple `LogForwarder` backend which forwards logs to another server which running as a supervisor
+A simple `LogForwarder` backend which run as a supervisor to forward logs to another server.
 
 ## Configuration
 
