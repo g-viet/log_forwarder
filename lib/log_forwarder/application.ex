@@ -4,12 +4,10 @@ defmodule LogForwarder.Application do
   @moduledoc false
 
   use Application
-  alias LogForwarder.Client
   def start(_type, _args) do
-    import Supervisor.Spec
     # List all child processes to be supervised
     children = [
-      supervisor(Client, [])
+      LogForwarder
       # Starts a worker by calling: LogForwarder.Worker.start_link(arg)
       # {LogForwarder.Worker, arg},
     ]
