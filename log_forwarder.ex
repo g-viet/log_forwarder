@@ -20,18 +20,11 @@ defmodule LogForwader do
     Task.start(fn ->
       tag_with_level = "#{tag}.#{level}"
 
-      data =
-        data
-        |> Map.take(log_attrs())
-        |> Map.put("level", "#{level}")
+      data = Map.put(data, "level", "#{level}")
 
       GenServer.cast(Client, {:send, tag_with_level, data})
     end)
   end
 
   def send_log(_, _, _), do: nil
-
-  defp log_attrs do
-    ~w(level error)
-  end
 end

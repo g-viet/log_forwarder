@@ -14,7 +14,7 @@ config :log_forwarder,
       port: 24224,
       prefix: "LogForwarder",
       retry_times: 10,
-      attrs: ~w(level error ...)
+      attributes: ~w(level error ...)
     ]
 ```
 
@@ -26,7 +26,7 @@ Application will start `LogForwader`.
 * port
 * prefix
 * retry_times
-* attrs
+* attributes
 
 ## How to use
 

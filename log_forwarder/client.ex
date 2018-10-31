@@ -50,6 +50,7 @@ defmodule LogForwader.Client do
   defp send(tag, data, %State{socket: socket, config: config} = state) do
     try do
       cur_time = System.system_time(:second)
+      data = data |> Map.take(config[:attributes])
       packet = Msgpax.pack!([tag, cur_time, data])
       Socket.Stream.send!(socket, packet)
     rescue
@@ -65,7 +66,8 @@ defmodule LogForwader.Client do
       host: "localhost",
       port: 24224,
       prefix: "LogForwarder",
-      retry_times: 10
+      retry_times: 10,
+      attributes: ~w(level error)
     ]
   end
 
