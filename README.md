@@ -32,7 +32,7 @@ Application will start `LogForwader`.
 
 ```elixir
 defmodule SampleModule do
-    import LogForwarder, only: [send_log: 3]
+    import LogForwarder
 
     def sample_func() do
         # do something ...
