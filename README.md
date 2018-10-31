@@ -3,6 +3,16 @@
 
 A simple `LogForwarder` backend as a supervisor which forwards logs to another server.
 
+## Installation
+
+```elixir
+def deps do
+  [
+    {:log_forwarder, "~> 0.1.0"}
+  ]
+end
+```
+
 ## Configuration
 
 Our config.exs would have an entry similar to this:
