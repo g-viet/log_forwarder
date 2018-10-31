@@ -32,13 +32,6 @@ defmodule LogForwader do
   def send_log(_, _, _), do: nil
 
   defp log_attrs do
-    ~w(
-      level
-      id
-      attr_sample1
-      attr_sample2
-      attr_sample3
-      error
-    )
+    ~w(level error)
   end
 end
