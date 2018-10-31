@@ -4,7 +4,7 @@ defmodule LogForwarder.MixProject do
   def project do
     [
       app: :log_forwarder,
-      version: "0.2.0",
+      version: "0.2.1",
       name: "LogForwarder",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
