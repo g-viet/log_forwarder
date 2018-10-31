@@ -25,9 +25,9 @@ defmodule LogForwader do
   ## Parameters:
   | Param | Description | Example |
   |-|-|-|
-  | `tag` | Tag of long | `API`, `Auth`, ...|
+  | `tag` | Tag of log | `API`, `Auth`, ...|
   | `level` | Log level | `:info` or `:error`|
-  | `data` | Log data | `%{user_id: 123, function_name: Client.sample_func, ...`} |
+  | `data` | Log data | `%{user_id: 123, function_name: 'Client.sample_func', ...`} |
 
   ## Examples
 
