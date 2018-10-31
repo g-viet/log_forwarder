@@ -7,7 +7,10 @@ defmodule LogForwarder.MixProject do
       version: "0.1.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: description(),
+      package: package(),
+      source_url: "https://github.com/g-viet/log_forwarder"
     ]
   end
 
@@ -22,7 +25,21 @@ defmodule LogForwarder.MixProject do
   defp deps do
     [
       {:msgpax, "~> 2.1"},
-      {:socket, "~> 0.3"}
+      {:socket, "~> 0.3"},
+      {:ex_doc, "~> 0.18.0", only: :dev, runtime: false}
+    ]
+  end
+
+  defp description do
+    "A log forwarder backend which run as a supervisor to forward logs to another server."
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", ".formatter.exs", "README*"],
+      maintainers: ["Viet Nguyen"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/g-viet/log_forwarder"}
     ]
   end
 end
