@@ -36,27 +36,6 @@ config :log_forwarder, config:
 
 ## How to use
 
-The typical use of `LogForwarder` is to set up using a Supervisor. It can be handled automatically:
-1. Add following into `application.ex`:
-
-```elixir
-def start(_type, _args) do
-    Supervisor.start_link(
-        [ supervisor(LogForwarder, []),
-        # other Supervisor or Worker
-        ]
-    )
-end
-```
-
-2. Ensure `LogForwarder` is started before your app:
-```elixir
-def application do
-  [applications: [:cachex]]
-end
-```
-
-3. Then:
 ```elixir
 defmodule SampleModule do
     import LogForwarder
